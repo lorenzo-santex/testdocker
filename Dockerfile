@@ -1,5 +1,5 @@
 FROM ubuntu:latest
 
-RUN apt update && apt install -y vim
+RUN apt update && apt install -y mysql-client
 
-CMD ["vim"]
+CMD ["mysql"]
