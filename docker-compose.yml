@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  ubuntu:
+    container_name: ubuntu
+    build: .
+    command: tail -f /dev/null
+    volumes:
+      - ./ubuntu:/home
+  mysql:
+    container_name: mysql
+    image: mysql:8.0.33
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql:/var/lib/mysql
+
